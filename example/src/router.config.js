@@ -40,6 +40,7 @@ const routes = [
       {path: '/', redirect: '/app', exact: true},
       {
         path: '/app',
+        name: 'app',
         routes: [
           {path: '/app', redirect: '/app/page-1', exact: true},
           {

@@ -16,8 +16,10 @@ const checkPermission = (authority, currentAuthority, target, noMatch = null) =>
   return noMatch
 }
 
+let CURRENT = null
 const Authorized = ({isAuthenticated, children, history, authority, currentAuthority}) => {
   if (isAuthenticated) {
+    CURRENT = currentAuthority
     return checkPermission(authority, currentAuthority, children, <Page403/>)
   } else {
     history.replace('/user/login')
@@ -25,4 +27,7 @@ const Authorized = ({isAuthenticated, children, history, authority, currentAutho
   }
 }
 
+const check = (authority, target, Exception) =>
+  checkPermission(authority, CURRENT, target, Exception)
+export {check}
 export default connect(({isAuthenticated, currentAuthority}) => ({isAuthenticated, currentAuthority}))(Authorized)
