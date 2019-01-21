@@ -1,22 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
+import Router from './router'
+import renderRoutes from './renderRoutes'
+import createHistory from './createHistory'
 
-import styles from './styles.css'
+const createRouter = (routerConfig, {extraProps = {}, switchProps = {}, historyOpts = {}} = {}) => (
+  <Router history={createHistory(historyOpts)}>
+    {renderRoutes(routerConfig, extraProps, switchProps)}
+  </Router>
+)
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+export default createRouter
