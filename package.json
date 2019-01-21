@@ -1,7 +1,7 @@
 {
   "name": "react-config-router",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A configuration router base on react-router v4",
   "author": "zenghongtu",
   "license": "MIT",
   "repository": "zenghongtu/react-config-router",
@@ -24,7 +24,8 @@
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
@@ -57,8 +58,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "react-router-dom": "^4.3.1"
-  }
+  ]
 }
