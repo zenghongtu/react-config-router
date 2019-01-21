@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import './index.css'
-import App from './App'
+import createRouter from 'react-simple-router'
+import routes from './router.config'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(createRouter(routes), document.getElementById('root'))
