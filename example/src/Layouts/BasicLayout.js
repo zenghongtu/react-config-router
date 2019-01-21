@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 class BasicLayout extends React.Component {
   render() {
@@ -8,9 +9,13 @@ class BasicLayout extends React.Component {
         <div>BasicLayout page
           <div>{children}</div>
         </div>
+        <button onClick={() => {
+          this.props.dispatch({type: 'logout'})
+        }}>logout
+        </button>
       </React.Fragment>
     )
   }
 }
 
-export default BasicLayout
+export default connect()(BasicLayout)
