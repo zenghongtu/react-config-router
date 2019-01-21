@@ -1,7 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import createRouter from 'react-simple-router'
+import createRouter from 'react-config-router'
 import routes from './router.config'
 
-ReactDOM.render(createRouter(routes), document.getElementById('root'))
+import {Provider} from 'react-redux'
+import store from './store'
+
+ReactDOM.render(
+  <Provider store={store}>
+    {createRouter(routes)}
+  </Provider>
+  , document.getElementById('root'))

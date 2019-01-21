@@ -3,10 +3,16 @@ import Router from './router'
 import renderRoutes from './renderRoutes'
 import createHistory from './createHistory'
 
-const createRouter = (routerConfig, {extraProps = {}, switchProps = {}, historyOpts = {}} = {}) => (
-  <Router history={createHistory(historyOpts)}>
-    {renderRoutes(routerConfig, extraProps, switchProps)}
-  </Router>
-)
+let history = null
 
+const createRouter = (routerConfig, {extraProps = {}, switchProps = {}, historyOpts = {}} = {}) => {
+  history = createHistory(historyOpts)
+  return (
+    <Router history={history}>
+      {renderRoutes(routerConfig, extraProps, switchProps)}
+    </Router>
+  )
+}
+
+export {history}
 export default createRouter

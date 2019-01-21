@@ -1,6 +1,6 @@
 {
-  "name": "react-simple-router-example",
-  "homepage": "https://zenghongtu.github.io/react-simple-router",
+  "name": "react-config-router-example",
+  "homepage": "https://zenghongtu.github.io/react-config-router",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -8,9 +8,11 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^1.1.4",
-    "react-simple-router": "link:.."
+    "react-config-router": "link:..",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "PORT=3003 react-scripts start",

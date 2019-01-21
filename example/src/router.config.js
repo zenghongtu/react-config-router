@@ -7,6 +7,7 @@ import PageA from './pages/PageA'
 import PageB from './pages/PageB'
 import Page1 from './pages/App/Page1'
 import Page2 from './pages/App/Page2'
+import Authorized from './pages/Authorized'
 
 const routes = [
   // user
@@ -33,8 +34,8 @@ const routes = [
   {
     path: '/',
     component: BasicLayout,
-    // Routes: [Authorized],
-    // authority: ['admin', 'user'],
+    Routes: [Authorized],
+    authority: ['admin', 'user'],
     routes: [
       {path: '/', redirect: '/app', exact: true},
       {

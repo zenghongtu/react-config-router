@@ -1,11 +1,28 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import Page403 from './Page403'
 
-class Authorized extends React.Component {
-  render() {
-    return (
-      <div>Authorized page</div>
-    )
+const checkPermission = (authority, currentAuthority, target, noMatch = null) => {
+  if (!authority) return target
+  if (Array.isArray(authority)) {
+    if (authority.includes(currentAuthority)) return target
+  }
+  if (typeof authority === 'string') {
+    if (authority === currentAuthority) return target
+    if (Array.isArray(currentAuthority)) {
+      if (currentAuthority.includes(authority)) return target
+    }
+  }
+  return noMatch
+}
+
+const Authorized = ({isAuthenticated, children, history, authority, currentAuthority}) => {
+  if (isAuthenticated) {
+    return checkPermission(authority, currentAuthority, children, <Page403/>)
+  } else {
+    history.replace('/user/login')
+    return null
   }
 }
 
-export default Authorized
+export default connect(({isAuthenticated, currentAuthority}) => ({isAuthenticated, currentAuthority}))(Authorized)
