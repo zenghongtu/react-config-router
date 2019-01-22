@@ -7,8 +7,12 @@ class Login extends React.Component {
       <React.Fragment>
         <div>Login page</div>
         <button onClick={() => {
-          this.props.dispatch({type: 'login'})
-        }}>login
+          this.props.dispatch({type: 'login', payload: 'user'})
+        }}>login (User)
+        </button>
+        <button onClick={() => {
+          this.props.dispatch({type: 'login', payload: 'admin'})
+        }}>login (Admin)
         </button>
       </React.Fragment>
     )

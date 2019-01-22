@@ -88,12 +88,12 @@ const reducer = (state = initState, {type, payload}) => {
       history.replace('/')
       return {
         isAuthenticated: true,
-        currentAuthority: 'user'
+        currentAuthority: payload
       }
     case 'logout':
       return {
         isAuthenticated: false,
-        currentAuthority: 'guest'
+        currentAuthority: payload
       }
     case 'getMenuData':
       const {routes, authority} = payload

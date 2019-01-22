@@ -60,12 +60,14 @@ const routes = [
       {
         path: '/page/page-a',
         name: 'page-a',
+        authority: ['admin'],
         // icon: 'page-a',
         component: PageA
       },
       {
         path: '/page/page-b',
         name: 'page-b',
+        authority: ['admin'],
         // icon: 'page-b',
         component: PageB
       },

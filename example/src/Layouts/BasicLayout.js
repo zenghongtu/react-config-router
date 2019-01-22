@@ -22,7 +22,8 @@ class BasicLayout extends React.Component {
       menuData,
       breadcrumbNameMap,
       location,
-      dispatch
+      dispatch,
+      currentAuthority
     } = this.props
     if (!menuData) return null
 
@@ -39,6 +40,7 @@ class BasicLayout extends React.Component {
     return (
       <React.Fragment>
         <div>BasicLayout page</div>
+        <div>当前权限: {currentAuthority}</div>
         <button onClick={() => {
           dispatch({type: 'logout'})
         }}>logout
@@ -56,8 +58,10 @@ class BasicLayout extends React.Component {
 
 export default connect(({
                           menuData,
-                          breadcrumbNameMap
+                          breadcrumbNameMap,
+                          currentAuthority
                         }) => ({
   menuData,
-  breadcrumbNameMap
+  breadcrumbNameMap,
+  currentAuthority
 }))(BasicLayout)
