@@ -1,5 +1,6 @@
-import createHistory from 'history/createBrowserHistory'
+import {createHashHistory, createBrowserHistory} from 'history'
 
-export default function (opts) {
-  return createHistory(opts)
+export default function (mode, opts) {
+  if (mode === 'hash') return createHashHistory(opts)
+  return createBrowserHistory(opts)
 }

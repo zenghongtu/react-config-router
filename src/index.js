@@ -5,10 +5,10 @@ import createHistory from './createHistory'
 
 let history = null
 
-const createRouter = (routerConfig, {extraProps = {}, switchProps = {}, historyOpts = {}} = {}) => {
-  history = createHistory(historyOpts)
+const createRouter = (routerConfig, {mode = 'history', routerProps = {}, extraProps = {}, switchProps = {}, historyOpts = {}} = {}) => {
+  history = createHistory(mode, historyOpts)
   return (
-    <Router history={history}>
+    <Router history={history} {...routerProps}>
       {renderRoutes(routerConfig, extraProps, switchProps)}
     </Router>
   )
