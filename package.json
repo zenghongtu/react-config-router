@@ -1,6 +1,6 @@
 {
   "name": "react-config-router",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A configuration router base on react-router v4",
   "author": "zenghongtu",
   "license": "MIT",
