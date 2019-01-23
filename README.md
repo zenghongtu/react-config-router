@@ -52,6 +52,15 @@ import {history} from 'react-config-router'
 history.replace('/')
 ```
 
+## API
+createRouter(routes,options)
+- routes 路由配置
+- mode 路由类型 `hash | history`
+- routerProps  传入Router中
+- switchProps  传入子路由中
+- historyOpts  传入 history 中, 更多配置参考 [history](https://github.com/ReactTraining/history)
+- extraProps 其他 props 传入子路由
+
 
 ## License
 
